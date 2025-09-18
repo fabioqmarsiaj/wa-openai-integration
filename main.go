@@ -12,8 +12,8 @@ var verifyToken = os.Getenv("WEBHOOK_VERIFY_TOKEN")
 func main() {
 	router := gin.Default()
 
-	router.GET("/webhook", handleVerification)
-	router.POST("/webhook", handleMessageNotification)
+	router.GET("/webhooks", handleVerification)
+	router.POST("/webhooks", handleMessageNotification)
 
 	port := os.Getenv("PORT")
 	if port == "" {
